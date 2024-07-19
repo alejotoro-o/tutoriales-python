@@ -38,7 +38,7 @@ def calcular_estadisticas_clase(estudiantes):
 
         accum += float(estudiante[-1])
 
-        if float(estudiante[-1]) > 3.0:
+        if float(estudiante[-1]) >= 3.0:
             num_aprobados += 1
         else:
             num_reprobados += 1
@@ -52,7 +52,7 @@ def mostrar_tabla(estudiantes):
 
     max_string_len = dar_formato(estudiantes)
     
-    print(max_string_len)
+    #print(max_string_len)
 
     print("Nombre".ljust(max_string_len), "|", "C1".ljust(max_string_len), "|", "C2".ljust(max_string_len), "|", "Promedio".ljust(max_string_len))
 
@@ -128,10 +128,10 @@ while 1:
 
     elif opcion == "d":
 
-        print("Ingrese el nombre del estudiante de la siguiente forma <nombre,calificacion1,calificacion2>: ")
+        print("Ingrese la información del estudiante de la siguiente forma <nombre,nota1,nota2>: ")
 
-        estudiante = input().split(",")
-        estudiante.append(calcular_promedio_estudiante(estudiante))
+        estudiante = input().split(",") ## estudiante = [nombre, n1, n2]
+        estudiante.append(calcular_promedio_estudiante(estudiante)) ## -> estudiante = [nombre, n1, n2, promedio]
         estudiantes.append(estudiante)
 
 
@@ -142,7 +142,7 @@ while 1:
         nombre = input()
         indice_estudiante = buscar_estudiante(nombre, estudiantes)
 
-        if indice_estudiante:
+        if indice_estudiante is not None:
             
             estudiantes.pop(indice_estudiante)
             print("Estudiante eliminado.")
