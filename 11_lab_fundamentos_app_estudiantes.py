@@ -54,7 +54,7 @@ def mostrar_tabla(estudiantes):
     
     #print(max_string_len)
 
-    print("Nombre".ljust(max_string_len), "|", "C1".ljust(max_string_len), "|", "C2".ljust(max_string_len), "|", "Promedio".ljust(max_string_len))
+    print("Nombre".ljust(max_string_len), "|", "N1".ljust(max_string_len), "|", "N2".ljust(max_string_len), "|", "Promedio".ljust(max_string_len))
 
     for estudiante in estudiantes:
 
@@ -75,7 +75,7 @@ def dar_formato(estudiantes):
 ## VARIABLES GLOBALES ##
 ########################
 init = False
-estudiantes = []
+estudiantes = [] # estudiantes = [[nombre1,nota1,nota2,promedio],[nombre2,nota1,nota2,promedio]]
 
 #####################
 ## CICLO PRINCIPAL ##
